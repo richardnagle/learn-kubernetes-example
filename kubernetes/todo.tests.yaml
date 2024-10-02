@@ -1,0 +1,15 @@
+﻿apiVersion: v1
+kind: Pod
+metadata:
+  name: todo-tests
+spec:
+  containers:
+    - name: todo-tests
+      image: "todo.tests:dev"
+      imagePullPolicy: IfNotPresent
+      env:
+      - name: API_BASE_ADDRESS
+        value: "http://todo-api"
+      - name: API_TIMEOUT_SECS
+        value: "5"
+  restartPolicy: Never
